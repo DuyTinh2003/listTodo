@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #ffe000, #799f0c);
+  min-height: 100vh;
+}
+.App {
+  display: flex;
+}
+.container {
+  margin: 100px auto;
+  background-color: #fff;
+  padding-top: 10px;
+  border-radius: 5px;
+  width: 600px;
+}
+.wrap_input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+}
+.wrap_input input {
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+.btn_add_todo {
+  background-color: #9acd32;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.list_todo {
+  list-style: none;
+  padding: 0 20px;
+}
+.list_todo:has(.item_todo.edit) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.item_todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+}
+.item_todo.edit .edit_todo {
+  display: flex;
+}
+
+.edit_todo {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  bottom: 0;
+  left: -20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  display: none;
+  z-index: 100;
+}
+.edit_todo input {
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+.edit_todo button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-size: 20px;
+  cursor: pointer;
+}
+.item_todo span {
+  width: 60%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.item_todo.completed span {
+  color: #ccc;
+  text-decoration-line: line-through;
+}
+.item_todo:hover .wrap_active {
+  display: block;
+}
+.wrap_active {
+  display: none;
+}
+.item_todo i {
+  padding: 0 10px;
+  cursor: pointer;
+  color: rgb(100, 100, 100);
+}
+.item_todo + .item_todo {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
